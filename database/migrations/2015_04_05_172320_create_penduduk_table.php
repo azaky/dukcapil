@@ -1,0 +1,47 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreatePendudukTable extends Migration {
+
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+	{
+		Schema::create('penduduk', function(Blueprint $table)
+		{
+            $table->increments('id');
+            $table->string('nama');
+            $table->string('agama');
+            $table->string('kewarganegaraan');
+            $table->string('pendidikan');
+            $table->string('jenisKelamin');
+            $table->string('tempatLahir');
+            $table->date('waktuLahir');
+            $table->string('statusPernikahan')->nullable();
+            $table->string('pekerjaan')->nullable();
+            $table->integer('ayah')->unsigned()->nullable();
+            $table->foreign('ayah')->references('id')
+                ->on('penduduk');
+            $table->integer('ibu')->unsigned()->nullable();
+            $table->foreign('ibu')->references('id')
+                ->on('penduduk');
+            $table->timestamps();
+		});
+	}
+
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+		Schema::drop('penduduk');
+	}
+
+}
