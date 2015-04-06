@@ -29,8 +29,14 @@ class RemoveEnglishTables extends Migration {
 	 */
 	public function down()
 	{
-		// unfortunately we are unable to recreate the tables :(
-        // rerun the old migrations when needed
+        Schema::create('family_register_citizens_map', function(Blueprint $table) {$table->increments('id');});
+        Schema::create('government_employees', function(Blueprint $table) {$table->increments('id');});
+        Schema::create('identity_cards', function(Blueprint $table) {$table->increments('id');});
+        Schema::create('family_registers', function(Blueprint $table) {$table->increments('id');});
+        Schema::create('death_certificates', function(Blueprint $table) {$table->increments('id');});
+        Schema::create('birth_certificates', function(Blueprint $table) {$table->increments('id');});
+        Schema::create('marriage_certificates', function(Blueprint $table) {$table->increments('id');});
+        Schema::create('citizens', function(Blueprint $table) {$table->increments('id');});
 	}
 
 }
