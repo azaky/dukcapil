@@ -14,8 +14,7 @@ class CreateInstansiKependudukanTable extends Migration {
 	{
 		Schema::create('instansi_kependudukan', function(Blueprint $table)
 		{
-            $table->string('id');
-            $table->primary('id');
+            $table->increments('id');
             $table->string('username');
             $table->string('password');
             $table->string('jabatan');

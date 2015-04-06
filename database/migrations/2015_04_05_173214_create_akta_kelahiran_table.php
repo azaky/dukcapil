@@ -14,26 +14,26 @@ class CreateAktaKelahiranTable extends Migration {
 	{
 		Schema::create('akta_kelahiran', function(Blueprint $table)
 		{
-            $table->string('id');
-            $table->primary('id');
-            $table->date('waktuLahir');
-            $table->string('tempatLahir');
-            $table->string('jenisKelahiran');
-            $table->string('anakKe');
-            $table->string('penolongKelahiran');
-            $table->string('berat');
-            $table->integer('pelapor')->unsigned()->nullable();
-            $table->foreign('pelapor')->references('id')
-                ->on('penduduk')->onDelete('CASCADE')
-                ->onUpdate('CASCADE');
-            $table->integer('saksi1')->unsigned()->nullable();
-            $table->foreign('saksi1')->references('id')
-                ->on('penduduk')->onDelete('CASCADE')
-                ->onUpdate('CASCADE');
-            $table->integer('saksi2')->unsigned()->nullable();
-            $table->foreign('saksi2')->references('id')
-                ->on('penduduk')->onDelete('CASCADE')
-                ->onUpdate('CASCADE');
+            $table->increments('id');
+            $table->date('waktuCetak');
+//            $table->date('waktuLahir');
+//            $table->string('tempatLahir');
+//            $table->string('jenisKelahiran');
+//            $table->string('anakKe');
+//            $table->string('penolongKelahiran');
+//            $table->string('berat');
+//            $table->integer('pelapor')->unsigned()->nullable();
+//            $table->foreign('pelapor')->references('id')
+//                ->on('penduduk')->onDelete('CASCADE')
+//                ->onUpdate('CASCADE');
+//            $table->integer('saksi1')->unsigned()->nullable();
+//            $table->foreign('saksi1')->references('id')
+//                ->on('penduduk')->onDelete('CASCADE')
+//                ->onUpdate('CASCADE');
+//            $table->integer('saksi2')->unsigned()->nullable();
+//            $table->foreign('saksi2')->references('id')
+//                ->on('penduduk')->onDelete('CASCADE')
+//                ->onUpdate('CASCADE');
             $table->integer('idPenduduk')->unsigned();
             $table->foreign('idPenduduk')->references('id')
                 ->on('penduduk')->onDelete('CASCADE')

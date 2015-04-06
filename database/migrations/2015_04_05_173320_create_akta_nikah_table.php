@@ -14,8 +14,7 @@ class CreateAktaNikahTable extends Migration {
 	{
 		Schema::create('akta_nikah', function(Blueprint $table)
 		{
-            $table->string('id');
-            $table->primary('id');
+            $table->increments('id');
             $table->date('waktuNikah');
             $table->string('tempatNikah');
             $table->date('waktuCetak');

@@ -14,8 +14,7 @@ class CreateAktaKematianTable extends Migration {
 	{
 		Schema::create('akta_kematian', function(Blueprint $table)
 		{
-            $table->string('id');
-            $table->primary('id');
+            $table->increments('id');
             $table->date('waktuMati');
             $table->string('tempatMati');
             $table->date('waktuCetak');
