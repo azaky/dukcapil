@@ -22,7 +22,7 @@
                         </select></div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-4"><label>Tanggal Lahir</label><input class="form-control" placeholder="01-01-2000"></div>
+                    <div class="col-xs-4"><label>Tanggal Lahir</label><input class="form-control" placeholder="Tanggal Lahir" id="tgl_lahir"></div>
                     <div class="col-xs-4"><label>Jam Lahir</label><input class="form-control" placeholder="Jam Lahir"></div>
                 </div>
                 <div class="row">
@@ -50,14 +50,7 @@
                 <h3 class="panel-title">Data Orang Tua</h3></div>
             <div class="panel-body">
                 <div class="row">
-                    <div class="col-xs-12"><label>NIK Ayah</label><input class="form-control" placeholder="NIK Ayah"></div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12"><label>NIK Ibu</label><input class="form-control" placeholder="NIK Ibu"></div>
-                </div>
-                <div class="row">
                     <div class="col-xs-6"><label>Nomor Akta Nikah</label><input class="form-control" placeholder="Nomor Akta Nikah"></div>
-                    <div class="col-xs-6"><label>Tanggal Pencatatan Perkawinan</label><input class="form-control" type="date" placeholder="Tanggal Pencatatan Perkawinan"></div>
                 </div>
             </div>
         </div>
@@ -82,4 +75,12 @@
             <button type="button" class="btn btn-success">Submit</button>
         </div>
     </div>
+@endsection
+
+@section('script')
+<script>
+    $(document).ready(function(){
+        $('#tgl_lahir').datepicker()
+    });
+</script>
 @endsection

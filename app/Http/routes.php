@@ -21,7 +21,7 @@ Route::controllers([
 ]);
 
 // TODO: remove this part.
-Route::get('/aktacerai', function() {
+/*Route::get('/aktacerai', function() {
     return view('pages.akta_cerai');
 });
 Route::get('/aktakelahiran', function() {
@@ -39,3 +39,5 @@ Route::get('/kartukeluarga', function() {
 Route::get('/kartutandapenduduk', function() {
     return view('pages.kartu_tanda_penduduk');
 });
+*/
+Route::controller('aktakelahiran','AktaKelahiranController');

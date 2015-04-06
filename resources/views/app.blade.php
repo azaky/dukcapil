@@ -11,6 +11,7 @@
     <link href="{{ asset('/assets/css/bootflat.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/assets/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/assets/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('/assets/css/jquery-ui.min.css') }}" rel="stylesheet">
 
     <!-- Page-Specific Stylesheets -->
     @yield('stylesheet')
@@ -53,7 +54,8 @@
 <script src="{{ asset('assets/js/icheck.min.js') }}"></script>
 <script src="{{ asset('assets/js/jquery.fs.selecter.min.js') }}"></script>
 <script src="{{ asset('assets/js/jquery.fs.stepper.min.js') }}"></script>
-
+<!-- Bootstrap Date Picker -->
+<script src="{{ asset('assets/js/jquery-ui.min.js') }}"></script>
 <!-- Menu Toggle Script -->
 <script>
     $("#menu-toggle").click(function(e) {
