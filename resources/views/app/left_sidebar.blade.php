@@ -6,25 +6,25 @@
             </a>
         </li>
         <li>
-            <a href="#">Dashboard</a>
-        </li>
-        <li class="dropdown">
-            <a href="#">Shortcuts</a>
+            <a href="#"><i class="fa fa-child"></i> Kelahiran</a>
         </li>
         <li>
-            <a href="#">Overview</a>
+            <a href="#"><i class="fa fa-child"></i> Pengesahan Anak</a>
         </li>
         <li>
-            <a href="#">Events</a>
+             <a href="#"><i class="fa fa-home"></i> Kartu Keluarga</a>
         </li>
         <li>
-            <a href="#">About</a>
+            <a href="#"><i class="fa fa-credit-card"></i> KTP</a>
         </li>
         <li>
-            <a href="#">Services</a>
+            <a href="#"><i class="fa fa-credit-card"></i> Pernikahan</a>
         </li>
         <li>
-            <a href="#">Contact</a>
+            <a href="#"><i class="fa fa-credit-card"></i> Perceraian</a>
+        </li>
+        <li>
+            <a href="#"><i class="fa fa-credit-card"></i> Kematian</a>
         </li>
     </ul>
 </div>
