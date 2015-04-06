@@ -3,6 +3,35 @@
 @section('content')
     <div class="well">
         <h3>Data Keluarga</h3>
+        <div class="row">
+            <div class="col-xs-9">
+                <label for="kepalaKeluarga">NIK Kepala Keluarga</label>
+                <input class="form-control" placeholder="NIK Kepala Keluarga" id="kepalaKeluarga" name="kepalaKeluarga">
+            </div>
+            <div class="col-xs-3">
+                <label for="jumlahAnggotaKeluarga">Jumlah Anggota Keluarga</label>
+                <input type="number" min="0" class="form-control" placeholder="Jumlah" id="jumlahAnggotaKeluarga">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6"><label>Alamat</label><input class="form-control" placeholder="Alamat"></div>
+            <div class="col-xs-6"><label>Kode Pos</label><input class="form-control" placeholder="Kode Pos"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6"><label>Kode-Nama Propinsi</label><input class="form-control" placeholder="Kode-Nama Propinsi"></div>
+            <div class="col-xs-6"><label>Kode-Nama Kabupatan/Kota</label><input class="form-control" placeholder="Kode-Nama Kabupatan/Kota"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6"><label>Kode-Nama Kecamatan</label><input class="form-control" placeholder="Kode-Nama Kecamatan"></div>
+            <div class="col-xs-6"><label>Kode-Nama Kelurahan</label><input class="form-control" placeholder="Kode-Nama Kelurahan"></div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success">Lanjut</button>
+        </div>
+    </div>
+
+    <div class="well">
+        <h3>Data Anggota Keluarga</h3>
 
         <div class="panel panel-default">
             <div class="panel-heading"><h3 class="panel-title">Anggota 1</h3></div>

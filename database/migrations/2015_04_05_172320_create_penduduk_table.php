@@ -16,9 +16,9 @@ class CreatePendudukTable extends Migration {
 		{
             $table->increments('id');
             $table->string('nama');
-            $table->string('agama');
+            $table->string('agama')->nullable();
             $table->string('kewarganegaraan');
-            $table->string('pendidikan');
+            $table->string('pendidikan')->nullable();
             $table->string('jenisKelamin');
             $table->string('tempatLahir');
             $table->datetime('waktuLahir');
