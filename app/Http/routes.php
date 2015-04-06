@@ -41,3 +41,4 @@ Route::get('/kartutandapenduduk', function() {
 });
 */
 Route::controller('aktakelahiran','AktaKelahiranController');
+Route::controller('kartukeluarga', 'KartuKeluargaController');
