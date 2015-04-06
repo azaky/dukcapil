@@ -6,4 +6,8 @@ class AktaKelahiran extends Model {
 
 	//
     protected $table = 'akta_kelahir';
+
+    protected $fillable = ['*'];
+
+    protected $dates = ['waktuCetak'];
 }

@@ -1,7 +1,8 @@
 @extends('app')
 
 @section('content')
-<form action="{{ url('/aktakelahiran/buat') }}">
+<form action="{{ url('/aktakelahiran/buat') }}" method="post">
+<input type="hidden" name="_token" value="{{ csrf_token() }}">
     <div class="well">
         <h3>Data Kelahiran</h3>
         <div class="panel panel-primary">
@@ -42,7 +43,7 @@
         </div>
 
         <div class="modal-footer">
-            <button type="button" class="btn btn-success">Submit</button>
+            <button type="submit" class="btn btn-success">Submit</button>
         </div>
     </div>
 </form>
@@ -51,7 +52,7 @@
 @section('script')
 <script>
     $(document).ready(function(){
-        $('#tgl_lahir').datepicker()
+        $('#tgl_lahir').datepicker({ dateFormat: 'yy-mm-dd' });
     });
 </script>
 @endsection
