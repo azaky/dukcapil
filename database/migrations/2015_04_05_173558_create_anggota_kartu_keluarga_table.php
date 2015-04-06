@@ -15,6 +15,7 @@ class CreateAnggotaKartuKeluargaTable extends Migration {
 		Schema::create('anggota_kartu_keluarga', function(Blueprint $table)
 		{
             $table->increments('id');
+            $table->string('status');
             $table->string('idKartuKeluarga')->nullable();
             $table->integer('idPenduduk')->unsigned()->nullable();
             $table->foreign('idKartuKeluarga')->references('id')

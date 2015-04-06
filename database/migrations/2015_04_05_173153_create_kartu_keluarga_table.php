@@ -26,6 +26,7 @@ class CreateKartuKeluargaTable extends Migration {
             $table->string('kota');
             $table->string('kecamatan');
             $table->string('kelurahan');
+            $table->boolean('status');
             $table->timestamps();
 		});
 	}
