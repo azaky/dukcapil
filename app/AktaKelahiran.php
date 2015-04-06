@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 class AktaKelahiran extends Model {
 
 	//
-    protected $table = 'akta_kelahir';
+    protected $table = 'akta_kelahiran';
 
     protected $fillable = ['*'];
 
