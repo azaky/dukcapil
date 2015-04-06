@@ -6,4 +6,8 @@ class Penduduk extends Model {
 
 	//
     protected $table = 'penduduk';
+
+    protected $fillable = ['*'];
+
+    protected $date = ['waktuLahir'];
 }
