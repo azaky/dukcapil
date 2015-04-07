@@ -12,9 +12,12 @@
                         <form id="cari-penduduk">
                             <div class="form-search search-only">
                                 <i class="search-icon fa fa-search"></i>
-                                <input class="form-control search-query" type="text" placeholder="Nomor Induk Kependudukan">
+                                <input class="form-control search-query" type="text" id="idPend" placeholder="Nomor Induk Kependudukan">
                             </div>
                         </form>
+                    </div>
+                    <div class="loading col-xs-2" style="display: none">
+                        <img src="{{ asset('assets/img/loading.gif') }}" alt=""/>
                     </div>
                 </div>
             </div>
@@ -27,25 +30,25 @@
                     <ul class="list-group">
                         <li class="list-group-item">
                             <div class="col-xs-4">NIK</div>
-                            <div class="col-xs-8">: </div>
+                            <div class="col-xs-8" id="nik">: </div>
                         </li>
                     </ul>
                     <ul class="list-group">
                         <li class="list-group-item">
                             <div class="col-xs-4">Nama Lengkap</div>
-                            <div class="col-xs-8">: </div>
+                            <div class="col-xs-8" id="nama">: </div>
                         </li>
                     </ul>
                     <ul class="list-group">
                         <li class="list-group-item">
                             <div class="col-xs-4">Tempat dan Tanggal Lahir</div>
-                            <div class="col-xs-8">: </div>
+                            <div class="col-xs-8" id="ttl">: </div>
                         </li>
                     </ul>
                     <ul class="list-group">
                         <li class="list-group-item">
                             <div class="col-xs-4">Alamat</div>
-                            <div class="col-xs-8">: </div>
+                            <div class="col-xs-8" id="alamat">: </div>
                         </li>
                     </ul>
                     <ul class="list-group">
@@ -69,25 +72,25 @@
                     <ul class="list-group">
                         <li class="list-group-item">
                             <div class="col-xs-4">Agama</div>
-                            <div class="col-xs-8">: </div>
+                            <div class="col-xs-8" id="agama">: </div>
                         </li>
                     </ul>
                     <ul class="list-group">
                         <li class="list-group-item">
                             <div class="col-xs-4">Status Perkawinan</div>
-                            <div class="col-xs-8">: </div>
+                            <div class="col-xs-8" id="statusPernikahan">: </div>
                         </li>
                     </ul>
                     <ul class="list-group">
                         <li class="list-group-item">
                             <div class="col-xs-4">Pekerjaan</div>
-                            <div class="col-xs-8">: </div>
+                            <div class="col-xs-8" id="pekerjaan">: </div>
                         </li>
                     </ul>
                     <ul class="list-group">
                         <li class="list-group-item">
                             <div class="col-xs-4">Kewarganegaraan</div>
-                            <div class="col-xs-8">: </div>
+                            <div class="col-xs-8" id="kewarganegaraan">: </div>
                         </li>
                     </ul>
                 </div>
@@ -108,8 +111,43 @@
 <script>
     $(document).ready(function() {
         $("#cari-penduduk").submit(function() {
-            $(".cari-penduduk").hide();
-            $(".data-penduduk").show();
+            var idPend = $("#idPend").val();
+            $.ajax({
+                dataType: "json",
+                url: "{{ url('penduduk') }}/"+idPend,
+                success: function(data){
+                    var bulan = [
+                        "Januari",
+                        "Februari",
+                        "Maret",
+                        "April",
+                        "Mei",
+                        "Juni",
+                        "Juli",
+                        "Agustus",
+                        "September",
+                        "Oktober",
+                        "November",
+                        "Desember"
+                    ];
+                    var waktuLahir = new Date(data.waktuLahir.substring(0,10));
+                    var D = waktuLahir.getDate();
+                    var M = bulan[waktuLahir.getMonth()];
+                    var Y = waktuLahir.getFullYear();
+                    $("#nik").html(": "+data.id);
+                    $("#nama").html(": "+data.nama);
+                    $("#ttl").html(": "+data.tempatLahir+", "+D+" "+M+" "+Y);
+                    $("#agama").html(": "+data.agama);
+                    $("#statusPerkawinan").html(": "+data.statusPerkawinan);
+                    $("#pekerjaan").html(": "+data.pekerjaan);
+                    $("#kewarganegaraan").html(": "+data.kewarganegaraan.toUpperCase());
+                    $(".cari-penduduk").hide();
+                    $(".data-penduduk").show();
+                },
+                beforeSend: function(){
+                    $(".loading").show();
+                }
+            });
             return false;
         });
     });

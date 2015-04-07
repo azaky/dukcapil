@@ -33,3 +33,4 @@ Route::get('/aktanikah', function() {
 Route::controller('aktakelahiran','AktaKelahiranController');
 Route::controller('kartukeluarga', 'KartuKeluargaController');
 Route::controller('kartutandapenduduk', 'KartuTandaPendudukController');
+Route::resource('penduduk', 'PendudukController');
