@@ -15,4 +15,9 @@ class Penduduk extends Model {
     {
         return $this->hasOne('App\AktaKelahiran', 'idPenduduk');
     }
+
+    public function kartuKeluarga()
+    {
+        return $this->belongsToMany('App\KartuKeluarga', 'anggota_kartu_keluarga', 'idPenduduk', 'idKartuKeluarga');
+    }
 }

@@ -11,9 +11,15 @@ class KartuKeluarga extends Model {
 
     protected $dates = ['waktuCetak'];
 
+    public $incrementing = false;
+
     // TODO: generate Id
     public function generateId() {
         $this->id = KartuKeluarga::all()->count() + 1;
     }
 
+    public function penduduk()
+    {
+        return $this->belongsToMany('App\Penduduk', 'anggota_kartu_keluarga', 'idKartuKeluarga', 'idPenduduk');
+    }
 }
