@@ -1,14 +1,18 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests;
-
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Request;
 
 class KartuKeluargaController extends Controller {
 
     public function getIndex()
     {
         return view('pages.kartu_keluarga');
+    }
+
+    public function postCreate()
+    {
+        dd(Request::all());
     }
 	/**
 	 * Display a listing of the resource.
