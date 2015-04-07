@@ -21,11 +21,8 @@ Route::controllers([
 ]);
 
 // TODO: remove this part.
-/*Route::get('/aktacerai', function() {
+Route::get('/aktacerai', function() {
     return view('pages.akta_cerai');
-});
-Route::get('/aktakelahiran', function() {
-    return view('pages.akta_kelahiran');
 });
 Route::get('/aktakematian', function() {
     return view('pages.akta_kematian');
@@ -33,12 +30,6 @@ Route::get('/aktakematian', function() {
 Route::get('/aktanikah', function() {
     return view('pages.akta_nikah');
 });
-Route::get('/kartukeluarga', function() {
-    return view('pages.kartu_keluarga');
-});
-Route::get('/kartutandapenduduk', function() {
-    return view('pages.kartu_tanda_penduduk');
-});
-*/
 Route::controller('aktakelahiran','AktaKelahiranController');
 Route::controller('kartukeluarga', 'KartuKeluargaController');
+Route::controller('kartutandapenduduk', 'KartuTandaPendudukController');

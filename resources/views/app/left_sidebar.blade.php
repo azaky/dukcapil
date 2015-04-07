@@ -9,22 +9,22 @@
             <a href="{{ url('aktakelahiran') }}"><i class="fa fa-child"></i> Kelahiran</a>
         </li>
         <li>
-            <a href="#"><i class="fa fa-child"></i> Pengesahan Anak</a>
+            <a href="{{ url('aktanikah') }}"><i class="fa fa-child"></i> Pengesahan Anak</a>
         </li>
         <li>
              <a href="{{ url('kartukeluarga') }}"><i class="fa fa-home"></i> Kartu Keluarga</a>
         </li>
         <li>
-            <a href="#"><i class="fa fa-credit-card"></i> KTP</a>
+            <a href="{{ url('kartutandapenduduk') }}"><i class="fa fa-credit-card"></i> KTP</a>
         </li>
         <li>
-            <a href="#"><i class="fa fa-credit-card"></i> Pernikahan</a>
+            <a href="{{ url('aktanikah') }}"><i class="fa fa-credit-card"></i> Pernikahan</a>
         </li>
         <li>
-            <a href="#"><i class="fa fa-credit-card"></i> Perceraian</a>
+            <a href="{{ url('aktacerai') }}"><i class="fa fa-credit-card"></i> Perceraian</a>
         </li>
         <li>
-            <a href="#"><i class="fa fa-credit-card"></i> Kematian</a>
+            <a href="{{ url('aktakematian') }}"><i class="fa fa-credit-card"></i> Kematian</a>
         </li>
     </ul>
 </div>
