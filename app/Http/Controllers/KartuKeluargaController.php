@@ -3,6 +3,7 @@
 use App\KartuKeluarga;
 use App\AktaKelahiran;
 use App\Http\Requests;
+use App\Penduduk;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Request;
 
@@ -29,33 +30,18 @@ class KartuKeluargaController extends Controller {
         $kartuKeluarga->generateId();
         $kartuKeluarga->save();
 
-//        $table->increments('id');
-//        $table->string('nama');
-//        $table->string('agama')->nullable();
-//        $table->string('kewarganegaraan');
-//        $table->string('pendidikan')->nullable();
-//        $table->string('jenisKelamin');
-//        $table->string('tempatLahir');
-//        $table->datetime('waktuLahir');
-//        $table->string('statusPernikahan')->nullable();
-//        $table->string('pekerjaan')->nullable();
-//        $table->integer('ayah')->unsigned()->nullable();
-//        $table->foreign('ayah')->references('id')
-//            ->on('penduduk');
-//        $table->integer('ibu')->unsigned()->nullable();
-//        $table->foreign('ibu')->references('id')
-//            ->on('penduduk');
-//        $table->timestamps();
-//        dd(Request::all());
         $n = count(Request::input('nama'));
         for ($i = 0; $i < $n; ++$i) {
-            $penduduk = AktaKelahiran::find(Request::get('kodeAktaLahir')[$i])->penduduk;
-            $penduduk->update([
-                'jenisKelamin' => Request::input('jenisKelamin' . $i),
-                'golonganDarah' => Request::input('golonganDarah' . $i),
-                'pendidikan' => Request::input('pendidikan' . $i),
-                'pekerjaan' => Request::input('pekerjaan' . $i),
-            ]);
+            $penduduk = AktaKelahiran::find(Request::input('kodeAktaLahir')[$i])->penduduk;
+            $penduduk->jenisKelamin = Request::input('jenisKelamin')[$i];
+            $penduduk->golonganDarah = Request::input('golonganDarah')[$i];
+            $penduduk->pendidikan = Request::input('pendidikan')[$i];
+            $penduduk->pekerjaan = Request::input('pekerjaan')[$i];
+            $penduduk->save();
+
+            // create relationships
+            $penduduk->kartuKeluarga()->attach($kartuKeluarga->id, ['status' => Request::input('status', ['Kepala Keluarga'])[$i]]);
+
             dd($penduduk);
         }
         dd(Request::all());

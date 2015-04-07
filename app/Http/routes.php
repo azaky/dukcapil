@@ -42,3 +42,6 @@ Route::get('/kartutandapenduduk', function() {
 */
 Route::controller('aktakelahiran','AktaKelahiranController');
 Route::controller('kartukeluarga', 'KartuKeluargaController');
+Route::get('/aktanikah', function() {
+    return view('pages.akta_nikah');
+});
