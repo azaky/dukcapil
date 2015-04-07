@@ -10,4 +10,9 @@ class Penduduk extends Model {
     protected $fillable = ['*'];
 
     protected $date = ['waktuLahir'];
+
+    public function aktaKelahiran()
+    {
+        return $this->hasOne('App\AktaKelahiran', 'idPenduduk');
+    }
 }

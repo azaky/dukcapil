@@ -10,4 +10,10 @@ class AktaKelahiran extends Model {
     protected $fillable = ['*'];
 
     protected $dates = ['waktuCetak'];
+
+    public function penduduk()
+    {
+        return $this->belongsTo('\App\Penduduk', 'idPenduduk');
+    }
+
 }
