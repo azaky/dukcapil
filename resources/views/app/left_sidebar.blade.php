@@ -6,13 +6,13 @@
             </a>
         </li>
         <li>
-            <a href="#"><i class="fa fa-child"></i> Kelahiran</a>
+            <a href="{{ url('aktakelahiran') }}"><i class="fa fa-child"></i> Kelahiran</a>
         </li>
         <li>
             <a href="#"><i class="fa fa-child"></i> Pengesahan Anak</a>
         </li>
         <li>
-             <a href="#"><i class="fa fa-home"></i> Kartu Keluarga</a>
+             <a href="{{ url('kartukeluarga') }}"><i class="fa fa-home"></i> Kartu Keluarga</a>
         </li>
         <li>
             <a href="#"><i class="fa fa-credit-card"></i> KTP</a>

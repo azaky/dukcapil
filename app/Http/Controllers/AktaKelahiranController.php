@@ -37,11 +37,20 @@ class AktaKelahiranController extends Controller {
         {
             $aktalahir = new AktaKelahiran();
             $aktalahir->idPenduduk = $penduduk->id;
+            $aktalahir->waktuCetak = Carbon::now();
             if ($aktalahir->save())
             {
-                return "masuk";
+                return redirect('aktakelahiran/lihat?noAk='.$aktalahir->id);
             }
         }
-        return "gagal";
+        return redirect()->back();
+    }
+
+    public function getLihat()
+    {
+        $id = Input::get("noAk");
+        $aktalahir = AktaKelahiran::find($id);
+        $penduduk = Penduduk::find($aktalahir->idPenduduk);
+        return view("pages.lihat_akta_kelahiran",["aktalahir"=>$aktalahir,"penduduk"=>$penduduk]);
     }
 }
