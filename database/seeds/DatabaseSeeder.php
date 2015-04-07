@@ -14,7 +14,30 @@ class DatabaseSeeder extends Seeder {
 	{
 		Model::unguard();
 
-		// $this->call('UserTableSeeder');
+		 $this->call('PendudukTableSeeder');
 	}
 
+}
+
+class PendudukTableSeeder extends Seeder {
+    public function run()
+    {
+        Model::unguard();
+
+//        $table->increments('id');
+//        $table->string('nama');
+//        $table->string('agama')->nullable();
+//        $table->string('kewarganegaraan');
+//        $table->string('pendidikan')->nullable();
+//        $table->string('jenisKelamin');
+//        $table->string('tempatLahir');
+//        $table->datetime('waktuLahir');
+        \App\Penduduk::create([
+            'nama' => 'Wono',
+            'kewarganegaraan' => 'wni',
+            'jenisKelamin' => 'L',
+            'tempatLahir' => 'Wonosobo',
+            'waktuLahir' => \Carbon\Carbon::now()
+        ]);
+    }
 }

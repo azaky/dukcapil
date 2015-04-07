@@ -22,6 +22,7 @@ class CreatePendudukTable extends Migration {
             $table->string('jenisKelamin');
             $table->string('tempatLahir');
             $table->datetime('waktuLahir');
+            $table->string('golonganDarah');
             $table->string('statusPernikahan')->nullable();
             $table->string('pekerjaan')->nullable();
             $table->integer('ayah')->unsigned()->nullable();

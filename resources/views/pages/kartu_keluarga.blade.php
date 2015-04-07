@@ -204,7 +204,7 @@
 //            $('.collapse:first').collapse();
         });
         $('#kkForm').submit(function() {
-
+            template.find('[name]').removeAttr('name');
         });
     });
 
