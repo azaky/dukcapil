@@ -19,7 +19,7 @@ class AktaKelahiranController extends Controller {
 	public function getIndex()
 	{
 		//
-        return view('pages.akta_kelahiran');
+        return view('pages.akta_kelahiran_new');
 	}
 
     /**

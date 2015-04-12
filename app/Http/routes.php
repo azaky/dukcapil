@@ -34,3 +34,10 @@ Route::controller('aktakelahiran','AktaKelahiranController');
 Route::controller('kartukeluarga', 'KartuKeluargaController');
 Route::controller('kartutandapenduduk', 'KartuTandaPendudukController');
 Route::resource('penduduk', 'PendudukController');
+
+Route::get('/dummy', function() {
+    return view('pages.dummy');
+});
+Route::get('/form', function() {
+    return view('pages.form');
+});
