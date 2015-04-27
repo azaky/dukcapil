@@ -11,7 +11,7 @@ class KartuKeluargaController extends Controller {
 
     public function getIndex()
     {
-        return view('pages.kartu_keluarga');
+        return view('pages.kartu_keluarga_new');
     }
 
     public function postCreate()

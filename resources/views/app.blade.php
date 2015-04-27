@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
+    <meta name="_token" content="{!! csrf_token() !!}"/>
     <link href="{{ asset('/assets/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/assets/css/simple-sidebar.css') }}" rel="stylesheet">
     <link href="{{ asset('/assets/css/bootflat.min.css') }}" rel="stylesheet">
@@ -61,6 +61,9 @@
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
+    });
+    $.ajaxSetup({
+        headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
     });
 </script>
 
