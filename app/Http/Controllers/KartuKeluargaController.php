@@ -41,10 +41,9 @@ class KartuKeluargaController extends Controller {
 
             // create relationships
             $penduduk->kartuKeluarga()->attach($kartuKeluarga->id, ['status' => Request::input('status', ['Kepala Keluarga'])[$i]]);
-
-            dd($penduduk);
         }
-        dd(Request::all());
+
+        return view('pages.lihat_kartu_keluarga');
     }
 
 	/**
